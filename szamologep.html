@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Számológép</title>
+</head>
+<body>
+  <h1>Egyszerű számológép (GET)</h1>
+
+  <form action="/calc" method="GET">
+    <input type="number" name="a" placeholder="Első szám" required>
+    <input type="number" name="b" placeholder="Második szám" required>
+
+    <select name="op">
+      <option value="add">+</option>
+      <option value="sub">-</option>
+      <option value="mul">*</option>
+      <option value="div">/</option>
+    </select>
+
+    <button type="submit">Számol</button>
+  </form>
+</body>
+</html>

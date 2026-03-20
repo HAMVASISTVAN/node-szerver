@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Háttérszín váltás</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      margin-right: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Válassz háttérszínt</h1>
+
+  <div id="color-options">ghh</div>
+
+  <script>
+    // 1) A választható színek tömbben
+    const colors = ["red", "green", "blue", "yellow", "white"]
+
+    // 2) A rádiógombok dinamikus létrehozása
+    const container = document.getElementById("color-options")
+
+    for (let i = 0; i < colors.length; i++) {
+      const color = colors[i]
+
+      // HTML elem létrehozása
+      const label = document.createElement("label")
+      label.innerHTML = `
+        <input type="radio" name="color" value="${color}">
+        ${color.charAt(0).toUpperCase() + color.slice(1)}
+      `
+      container.appendChild(label)
+    }
+
+    // 3) A rádiógombok lekérése
+    const radios = document.getElementsByName("color")
+
+    // 4) Eseménykezelés sima for ciklussal
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function () {
+        document.body.style.backgroundColor = this.value
+      })
+    }
+  </script>
+
+</body>
+</html>
